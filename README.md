@@ -6,4 +6,4 @@ To run the test project:
 2. Uncheck the ClientTest scene and check the TestServer scene and run it
 3. click on the bottom down button "Host" 
 4. Start your Client build and connect...
-5. For Database functionality you have to have a running MongoDB server, so if you don't, just uncheck the MongoDB Controller in the TestServer scene and remove the DatabaseSystem from the GameFeature
+5. For Database functionality you have to have a running MongoDB server on Port 3001, so if you don't, just uncheck the MongoDB Controller in the TestServer scene and remove the DatabaseSystem from the GameFeature. If your MongoDB server is running on a different port, just edit the port in the MongoDBController
