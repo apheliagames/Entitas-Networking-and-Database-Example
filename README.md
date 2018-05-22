@@ -7,3 +7,13 @@ To run the test project:
 3. click on the bottom down button "Host" 
 4. Start your Client build and connect...
 5. For Database functionality you have to have a running MongoDB server on Port 3001, so if you don't, just uncheck the MongoDB Controller in the TestServer scene and remove the DatabaseSystem from the GameFeature. If your MongoDB server is running on a different port, just edit the port in the MongoDBController
+
+To explain how it works:
+
+ just focus on the MNB.cs script, thats the point where new Input Entities are created for incoming RPCs and Creating also new Game Enitites for new connected Players. An RPCInputEmitter system is redirecting the input to the game entities, who are reacting on RPCInput components...I use a [PrimaryEntityIndex] on the networkID component for easily selecting the right entities in the game context.
+
+More infos about Entitas: https://github.com/sschmid/Entitas-CSharp/wiki
+More infos about Forge Networking: https://github.com/BeardedManStudios/ForgeNetworkingRemastered
+Official Forge Networking Documentation: http://docs.forgepowered.com/
+Official MongoDB .NET Driver Documentation: http://mongodb.github.io/mongo-csharp-driver/2.6/
+
