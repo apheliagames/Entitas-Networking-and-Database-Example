@@ -25,6 +25,7 @@ public class MNB : EntitasBehavior {
             Debug.Log("Network Server started");
             networkObject.Networker.playerAccepted += PlayerAcceptedSetup;
             networkObject.Networker.playerDisconnected += PlayerDisconnectedHandler;
+            networkObject.Networker.serverAccepted += ClientAcceptedSetup;
             contexts = Contexts.sharedInstance;
             _inputsystems = new InputFeature(contexts);            
             _inputsystems.Initialize();
@@ -34,14 +35,23 @@ public class MNB : EntitasBehavior {
         else
         {
             Debug.Log("Network Client started");
-            testClient = FindObjectOfType<TestClient>();
-            testClient.enabled = true;
+            testClient = FindObjectOfType<TestClient>();            
         }
     }
-        
+
+    private void ClientAcceptedSetup(NetWorker sender)
+    {
+        Debug.Log("Player Client connected ");
+        MainThreadManager.Run(() => InitTestClient(sender));
+    }
+    private void InitTestClient(NetWorker sender)
+    {        
+        testClient.enabled = true;
+    }
+
     private void PlayerDisconnectedHandler(NetworkingPlayer player, NetWorker sender)
     {
-        MainThreadManager.Run(() => DisconnectPlayer(player));
+        MainThreadManager.Run(() => DisconnectPlayer(player));        
     }
 
     private void DisconnectPlayer(NetworkingPlayer player)
@@ -52,9 +62,7 @@ public class MNB : EntitasBehavior {
 
     private void PlayerAcceptedSetup(NetworkingPlayer player, NetWorker sender)
     {
-        MainThreadManager.Run(() => ConnectNewPlayer(player));
-        //e.AddNetworkID(player.NetworkId);
-        //e.isClientConnected = true;
+        MainThreadManager.Run(() => ConnectNewPlayer(player));        
     }
     private void ConnectNewPlayer(NetworkingPlayer player)
     {

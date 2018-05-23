@@ -177,11 +177,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 495645697}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df6d65b2731ed60488057161ac99368a, type: 3}
+  m_Script: {fileID: 11500000, guid: b9b05abb58fcfaf4d986e552f4d297fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SaveEntitiesToDatabase: 0
 --- !u!4 &495645699
 Transform:
   m_ObjectHideFlags: 0

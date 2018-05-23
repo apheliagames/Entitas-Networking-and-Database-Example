@@ -9,7 +9,7 @@ public class TestClient : MonoBehaviour {
 
     MNB mnb;
     int health;
-
+    
 	// Use this for initialization
 	void Start () {
 

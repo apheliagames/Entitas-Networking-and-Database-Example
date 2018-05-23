@@ -6,12 +6,22 @@ namespace ApheliaGames.Backend
 {
     public class GameController : MonoBehaviour
     {
-        GameFeature _systems;
+        Feature _systems;
+        [SerializeField]
+        bool SaveEntitiesToDatabase;
+        MongoDBController mongoDBController;
         
         // Use this for initialization
         void Start()
-        {            
-            _systems = new GameFeature(Contexts.sharedInstance);
+        {
+            if (SaveEntitiesToDatabase)
+            {
+                mongoDBController = FindObjectOfType<MongoDBController>();
+                mongoDBController.enabled = true;
+                _systems = new PersistingNetworkGameFeature(Contexts.sharedInstance);
+            }
+                
+            else _systems = new NetworkOnlyGameFeature(Contexts.sharedInstance);
             _systems.Initialize();
         }
 

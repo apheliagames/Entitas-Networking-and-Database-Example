@@ -6,7 +6,8 @@ To run the test project:
 2. Uncheck the ClientTest scene and check the TestServer scene and run it
 3. Click on the button "(h) Host <IP-adress:Port"> on the bottom of the Multiplayer Menu Screen -> this starts the game server 
 4. Start your Client build and connect...
-5. For Database functionality you have to have a running MongoDB server on Port 3001, so if you don't, just uncheck the MongoDB Controller in the TestServer scene and remove the DatabaseSystem from the GameFeature. If your MongoDB server is running on a different port, just edit the port in the MongoDBController
+5. For Database functionality you need a running MongoDB server on Port 27017 (standard MongoDB port), If your MongoDB server is running on a different port or IP, just setup in the MongoDBController
+6. Check the Save Database flag of GameController in the TestServer scene 
 
 To explain how it works:
 
