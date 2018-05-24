@@ -10,7 +10,7 @@ namespace ApheliaGames.Backend
         [SerializeField]
         bool SaveEntitiesToDatabase;
         MongoDBController mongoDBController;
-        
+                
         // Use this for initialization
         void Start()
         {
@@ -21,8 +21,8 @@ namespace ApheliaGames.Backend
                 _systems = new PersistingNetworkGameFeature(Contexts.sharedInstance);
             }
                 
-            else _systems = new NetworkOnlyGameFeature(Contexts.sharedInstance);
-            _systems.Initialize();
+            else _systems = new NetworkOnlyGameFeature(Contexts.sharedInstance);            
+            _systems.Initialize();            
         }
 
         // Update is called once per frame

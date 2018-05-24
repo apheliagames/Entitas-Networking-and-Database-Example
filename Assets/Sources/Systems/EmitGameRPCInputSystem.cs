@@ -29,11 +29,12 @@ public sealed class EmitGameRPCInputSystem : ReactiveSystem<InputEntity>
         foreach (var ie in entities)
         {
             GameEntity ge = gameContext.GetEntityWithNetworkID(ie.rPCInput.networkID);
-            
-            if(!ge.hasInputRequest)//dont sent new input requests to entities who hasn't finished the last input request
+            //dont sent new input requests to entities who hasn't finished the last input request
+            if (!ge.hasInputRequest)
+            {
                 ge.AddInputRequest(ie.rPCInput.rpcByteID, ie.rPCInput.args);
-
-            ie.Destroy();
+                ie.isDestroyed = true;
+            }                
         }
     }
 

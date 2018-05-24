@@ -6,8 +6,11 @@ To run the test project:
 2. Uncheck the ClientTest scene and check the TestServer scene and run it
 3. Click on the button "(h) Host <IP-adress:Port"> on the bottom of the Multiplayer Menu Screen -> this starts the game server 
 4. Start your Client build and connect...
-5. For Database functionality you need a running MongoDB server on Port 27017 (standard MongoDB port), If your MongoDB server is running on a different port or IP, just setup in the MongoDBController
-6. Check the Save Database flag of GameController in the TestServer scene 
+5. In the Game Scene click Login User first...take note that a (given) Username, and (given) UserID gets sent to the Server and added as Component in the Gameentity with the specific NetworkID
+6. Enter a Health value and press send to add or remove health...the GameEntity is getting destroyed if the Value of health is <=0
+7. if Save Database flag is enables it saves the user and every change of health in a collection called "game" on the MongoDB server
+8. For Database functionality you need a running MongoDB server on Port 27017 (standard MongoDB port), If your MongoDB server is running on a different port or IP, just setup in the MongoDBController
+9. Check the Save Database flag of GameController in the TestServer scene 
 
 To explain how it works:
 

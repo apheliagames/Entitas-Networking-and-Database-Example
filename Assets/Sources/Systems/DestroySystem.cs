@@ -2,7 +2,6 @@
 
 public sealed class DestroySystem : IExecuteSystem
 {
-
     readonly IGroup<GameEntity> _gameentities;    
 
     public DestroySystem(Contexts contexts)

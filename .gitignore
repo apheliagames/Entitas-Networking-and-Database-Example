@@ -5,6 +5,11 @@
 [Oo]bj/
 [Ll]ibrary/
 [Bb]uild/
+Jenny/*
+Jenny-Server.bat
+Jenny-Auto-Import.bat
+Jenny-Auto-Import
+Jenny-Server
 Build/*
 Builds/*
 sysinfo.txt
@@ -33,3 +38,4 @@ sysinfo.txt
 Icon?
 ehthumbs.db
 [Tt]humbs.db
+Jenny Server.lnk
